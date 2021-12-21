@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>expense traker</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js">
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        Your browser is too old. Please upgrade to newest version.
+      </p>
+    <![endif]-->
+
+    <h2>Terry's Expense Tracker</h2>
+    <div class="container">
+      <h4>Your balance</h4>
+      <h1 id="balance">$0.0</h1>
+      <div class="inc-exp-container">
+        <div>
+          <h4>income</h4>
+          <p id="money-plus" class="money plus">+$0.00</p>
+        </div>
+        <div>
+          <h4>expense</h4>
+          <p id="money-minus" class="money minus">-$0.00</p>
+        </div>
+      </div>
+      <h3>Transaction History</h3>
+      <ul id="list" class="list">
+        <!-- <li class="minus">cash<span>-$400</span><button class="delete-btn">x</button></li> -->
+      </ul>
+      <h3>Add new transation</h3>
+      <form action="" id="form">
+        <div class="form-control">
+          <label for="text">Describe your transaction</label>
+          <input type="text" id="text" placeholder="Insert text here..." />
+        </div>
+        <div class="form-control">
+          <label for="amount"
+            >Amount <br />(Negative = expense  |  Positive = income)</label
+          >
+          <input
+            type="number"
+            id="amount"
+            placeholder="Please enter the amount..."
+          />
+        </div>
+        <button class="btn">Add transation</button>
+      </form>
+      <h3>Expenses</h3>
+      <div class="wrapper">
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+      	  <div class="title text-center mb-5">
+        <h4>Expenses</h4>
+        <canvas id="myChart" style="width:80%;max-width:400px"></canvas>
+        <script>
+          var xValues = ["Food", "Utilities", "Rent", "Transport", "Misc."];
+          var yValues = [3000, 1500, 3000,1000, 2000];
+          var barColors = ["#b91d47","#00aba9","#2b5797","#e8c3b9","#1e7145"];
+  
+          new Chart("myChart", {
+             type: "doughnut",
+             data: {
+                 labels: xValues,
+                 datasets: [{
+                     backgroundColor: barColors,
+                     data: yValues
+                 }]
+             },
+             options: {
+                 plugins:{ 
+                     responsive: true,
+                     legend: {
+                         position: 'top',
+                         labels:{color:'white'},
+                     },
+                     title: {
+                     display: true,
+                     text: 'Ideal Expenses',
+                     color: 'white'
+                 },
+               }
+             }
+          });
+       </script>
+       </div>
+    </div>
+    </div>
+    <script src="script.js" async defer></script>
+  </body>
+</html>
