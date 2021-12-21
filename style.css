@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap");
+
+:root {
+  --bg: #227C9D;
+  --text: #FEF9EF;
+  --line: #FEF9EF;
+  --last: #FFB133;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "segoe ui",arial,sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  margin: 30px auto;
+  width: 350px;
+}
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+h3 {
+  border-bottom: 1px solid var(--line);
+  padding: 10px;
+  margin: 40px 0 10px;
+}
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--last);
+}
+p {
+  color: var(--bg);
+  font-weight: bold;
+}
+.inc-exp-container {
+  background-color: var(--line);
+  padding: 20px;
+  box-shadow: #227C9D;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+.inc-exp-container > div:first-of-type {
+  border-right: 2px solid #227C9D;
+}
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+.money.plus {
+  color: forestgreen;
+}
+.money.minus {
+  color: crimson;
+}
+label {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: smaller;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #FEF9EF;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+.btn {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #FEF9EF;
+  background-color: #17C3B2;
+  border-radius: 10px;
+  box-shadow: #000000;
+  margin: 10px 0 30px;
+  width: 100%;
+}
+.btn:hover {background-color: #0d6e64}
+.btn:active {
+  background-color: #0d6e64;
+  transform: translateY(4px);
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: none;
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.list li {
+  background-color: #17C3B2;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+.list li.plus {
+  border-right: 20px solid forestgreen;
+}
+.list li.minus {
+  border-right: 20px solid crimson;
+}
+.delete-btn {
+  cursor: pointer;
+  background-color: var(--line);
+  border: 0;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+.chart-wrapper {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
